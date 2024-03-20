@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: srizvipythonproject 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: srizvipythonproject
+  template:
+    metadata:
+      labels:
+        app: srizvipythonproject 
+    spec:
+      containers:
+        - name: srizvipythonproject 
+          image: congre14.azurecr.io/srizvipythonproject
+          ports:
+          - containerPort: 5000
